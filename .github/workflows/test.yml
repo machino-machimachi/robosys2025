@@ -3,6 +3,9 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-varsion: ["3.13", "3.12", "3.11", "3.10"]
     steps:
     - uses: actions/checkout@v3
     - name: All test
